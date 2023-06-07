@@ -1,0 +1,28 @@
+{
+  "name": "@hexlet/code",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Chat Slack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmitry1178/frontend-project-12.git"
+  },
+  "author": "Dmitry Nesterov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmitry1178/frontend-project-12/issues"
+  },
+  "homepage": "https://github.com/dmitry1178/frontend-project-12#readme",
+  "dependencies": {
+    "@hexlet/chat-server": "^1.1.6",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^8.42.0",
+    "jest": "^29.5.0"
+  }
+}
