@@ -1,11 +1,10 @@
 {
   "name": "chat-slack",
-  "version": "0.1.0",
+  "version": "1.0",
   "private": true,
-  "proxy": "http://localhost:5001",
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
-    "@rollbar/react": "^0.11.1",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
     "formik": "^2.2.9",

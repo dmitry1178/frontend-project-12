@@ -14,7 +14,7 @@ const app = () => {
     <Provider store={store}>
       <RunApp socket={socket} />
     </Provider>,
-);
+  );
 };
 
 app();

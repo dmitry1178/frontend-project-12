@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/dmitry1178/frontend-project-12#readme",
   "dependencies": {
-    "@hexlet/chat-server": "^1.1.6"
+    "@hexlet/chat-server": "^1.1.6",
+    "@rollbar/react": "^0.11.2",
+    "rollbar": "^2.26.1"
   },
   "devDependencies": {
     "eslint": "^8.42.0",
