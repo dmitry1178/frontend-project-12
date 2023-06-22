@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chat",
   "main": "index.js",
   "scripts": {
     "build": "npm run build --prefix frontend",
@@ -9,9 +9,20 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "cd frontend && npm ci"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmitry1178/frontend-project-12.git"
+  },
+  "author": "Dmitry Nesterov",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmitry1178/frontend-project-12/issues"
+  },
+  "homepage": "https://github.com/dmitry1178/frontend-project-12#readme",
   "dependencies": {
     "@hexlet/chat-server": "^1.1.6"
+  },
+  "devDependencies": {
+    "prettier": "2.8.4"
   }
 }

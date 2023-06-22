@@ -1,0 +1,8 @@
+/node_modules/
+dist
+build
+
+src/App.js
+src/slices/channelSlices.js
+src/slices/modalSlices.js
+src/slices/MessageSlices.js
