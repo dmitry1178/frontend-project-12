@@ -81,7 +81,7 @@ export default async () => {
           <Provider store={store}>
             <ChatApiContext.Provider value={chatApi}>
               <App />
-              <ToastContainer pauseOnFocusLoss={false} position="top-center" />
+              <ToastContainer pauseOnFocusLoss={false} position="top-right" />
             </ChatApiContext.Provider>
           </Provider>
         </ErrorBoundary>
