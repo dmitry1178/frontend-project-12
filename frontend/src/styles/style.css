@@ -1,0 +1,46 @@
+.br-0 {
+  border-radius: 0;
+}
+
+.btn-channel {
+  text-align: left;
+}
+
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bs-danger);
+  --bs-tooltip-arrow-height: 0;
+  --bs-tooltip-arrow-weight: 0;
+}
+
+.tooltip-inner:empty {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #message {
+    width: 100%!important;
+    border-radius: 1px;
+  }
+
+  #b-send {
+    width: 100%!important;
+    border-radius: 1px;
+  }
+}
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

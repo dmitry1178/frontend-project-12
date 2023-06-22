@@ -1,6 +1,6 @@
-import store from '../../redux/slices/index.js';
+import store from '../../redux/slices/slices/index.js';
 import { addChannel, deleteChannel, renameChannel } from '../../redux/slices/channelsSlice.js';
-import { addMessage } from '../../redux/slices/messagesSlice.js';
+import { addMessage } from '../../redux/slices/slices/messagesSlice.js';
 
 const buildChatAPI = (socket) => {
   socket.on('newMessage', (payload) => {

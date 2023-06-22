@@ -7,6 +7,7 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import { useNavigate, Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { useTranslation } from 'react-i18next';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { useRollbar } from '@rollbar/react';
 import { useAuthContext } from '../../context/index.js';
 import { registartionSchema } from '../../schemas/index.js';

@@ -24,7 +24,12 @@ const Nav = ({ button }) => {
     <nav className="shadow-sm navbar navbar-expand-lg navbar-light bg-white">
       <div className="container">
         <Link className="navbar-brand" to="/">{t('chat')}</Link>
-        {button && <Button type="button" onClick={logout}>{t('buttons.logout')} </Button>}
+        {button && (
+        <Button type="button" onClick={logout}>
+          {t('buttons.logout')}
+          {' '}
+        </Button>
+        )}
       </div>
       <LanguageSwitcher />
     </nav>

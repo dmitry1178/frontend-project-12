@@ -7,6 +7,7 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { useRollbar } from '@rollbar/react';
 import { ToastContainer } from 'react-toastify';
 import { toastError } from '../toasts/index.js';
@@ -37,7 +38,7 @@ const Login = () => {
         });
 
         if (data.token) {
-          logIn(data)
+          logIn(data);
           navigate(routes.rootPagePath());
         }
       } catch (error) {
