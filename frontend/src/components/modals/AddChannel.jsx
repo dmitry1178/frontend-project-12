@@ -13,7 +13,8 @@ import { actions as channelsActions } from '../../slices/channelSlices.js';
 import { hideModal } from '../../slices/modalSlices.js';
 
 const Add = () => {
-  const channels = useSelector((state) => state.channels.channels);
+  const selectChannel = (state) => state.channels.channels;
+  const channels = useSelector(selectChannel);
   const { t } = useTranslation();
   const chatApi = useChatApi();
   const dispatch = useDispatch();

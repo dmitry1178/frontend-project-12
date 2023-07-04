@@ -4,11 +4,11 @@ import {
 } from 'react-router-dom';
 import { Navbar, Container, Button } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
-import ErrorPage from './routes/ErrorPage.jsx';
-import LoginPage from './routes/LoginPage.jsx';
-import ChatPage from './routes/ChatPage.jsx';
+import ErrorPage from './components/ErrorPage.jsx';
+import LoginPage from './components/LoginPage.jsx';
+import ChatPage from './components/ChatPage.jsx';
 import routes from './routes.js';
-import SignupPage from './routes/SignUpPage.jsx';
+import SignupPage from './components/SignUpPage.jsx';
 import AuthContext, { useAuth } from './contexts/index.jsx';
 
 const AuthProvider = ({ children }) => {

@@ -13,8 +13,10 @@ import { useChatApi } from '../../contexts/index.jsx';
 
 const Rename = () => {
   const { t } = useTranslation();
-  const channels = useSelector((state) => state.channels.channels);
-  const channelId = useSelector((state) => state.channels.currentChannelId);
+  const selectChannel = (state) => state.channels.channels;
+  const selectCurrentChannelId = (state) => state.channels.currentChannelId;
+  const channels = useSelector(selectChannel);
+  const channelId = useSelector(selectCurrentChannelId);
   const dispatch = useDispatch();
   const chatApi = useChatApi();
 

@@ -11,7 +11,8 @@ import { hideModal } from '../../slices/modalSlices.js';
 const Remove = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const channelId = useSelector((state) => state.channels.currentChannelId);
+  const selectCurrentChannelId = (state) => state.channels.currentChannelId;
+  const channelId = useSelector(selectCurrentChannelId);
   const chatApi = useChatApi();
   const [isSubmitting, setSubmitting] = useState(false);
   const onSubmit = async (e) => {
