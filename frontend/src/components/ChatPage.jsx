@@ -134,7 +134,7 @@ const SendingForm = ({ t, currentChannel, username }) => {
       setMessage('');
     } catch (err) {
       console.error(err);
-      toast.error('Ошибка отправки сообщения. Пожалуйста, попробуйте еще раз.');
+      toast.error(t('messageError'));
     } finally {
       setSubmitting(false);
     }
