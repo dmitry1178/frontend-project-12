@@ -9,7 +9,6 @@ import axios from 'axios';
 import _ from 'lodash';
 import { animateScroll } from 'react-scroll';
 import profanityFilter from 'leo-profanity';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { franc } from 'franc-min';
 import { useTranslation } from 'react-i18next';
 import routes from '../routes.js';

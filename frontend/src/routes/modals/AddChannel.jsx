@@ -21,7 +21,7 @@ const Add = () => {
     channelName: Yup.string().trim()
       .min(3, t('login.symbolCount'))
       .max(20, t('login.symbolCount'))
-      .required(t('login.requiredFiel'))
+      .required(t('login.requiredField'))
       .notOneOf(channelNames, t('login.unique')),
   });
 
