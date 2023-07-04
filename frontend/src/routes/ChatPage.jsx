@@ -17,6 +17,8 @@ import { actions as messagesActions } from '../slices/MessageSlices.js';
 import getModal from './modals/index.jsx';
 import { showModal } from '../slices/modalSlices.js';
 
+profanityFilter.loadDictionary('ru');
+
 const LeftCol = ({ t }) => {
   const dispatch = useDispatch();
   const { channels, currentChannelId } = useSelector((state) => state.channels);
@@ -82,8 +84,6 @@ const MessagesBox = ({ currentChannelMessages }) => {
     </div>
   );
 };
-
-profanityFilter.loadDictionary('ru');
 
 const SendingForm = ({ t, currentChannel, username }) => {
   const chatApi = useChatApi();
