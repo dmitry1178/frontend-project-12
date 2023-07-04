@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ArrowRightSquareFill, PlusSquareFill } from 'react-bootstrap-icons';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
   Button, Col, Container, Row, Dropdown, ButtonGroup,
@@ -142,7 +142,6 @@ const SendingForm = ({ t, currentChannel, username }) => {
 
   return (
     <div className="mt-auto px-5 py-3">
-      <ToastContainer />
       <form noValidate="" className="py-1 border rounded-2" onSubmit={submitHandler}>
         <fieldset disabled={isSubmitting}>
           <div className="input-group has-validation">
