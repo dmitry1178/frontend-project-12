@@ -96,7 +96,6 @@ const SendingForm = ({ t, currentChannel, username }) => {
     e.preventDefault();
     const trimmedMessage = message.trim();
     if (!trimmedMessage.length) return;
-    profanityFilter.loadDictionary('ru');
     const cleanedMessage = profanityFilter.clean(trimmedMessage);
     setSubmitting(true);
     try {
