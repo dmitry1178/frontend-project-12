@@ -82,6 +82,9 @@ const MessagesBox = ({ currentChannelMessages }) => {
     </div>
   );
 };
+
+profanityFilter.loadDictionary('ru');
+
 const SendingForm = ({ t, currentChannel, username }) => {
   const chatApi = useChatApi();
   const [isSubmitting, setSubmitting] = useState(false);
@@ -96,8 +99,7 @@ const SendingForm = ({ t, currentChannel, username }) => {
     e.preventDefault();
     const trimmedMessage = message.trim();
     if (!trimmedMessage.length) return;
-    const profanityFilterRu = profanityFilter.loadDictionary('ru');
-    const cleanedMessage = profanityFilterRu.clean(trimmedMessage);
+    const cleanedMessage = profanityFilter.clean(trimmedMessage);
     setSubmitting(true);
     try {
       await chatApi.newMessage({
