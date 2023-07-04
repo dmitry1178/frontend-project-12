@@ -18,9 +18,11 @@ import { actions as messagesActions } from '../slices/MessageSlices.js';
 import getModal from './modals/index.jsx';
 import { showModal } from '../slices/modalSlices.js';
 
+const selectChannel = (state) => state.channels;
+
 const LeftCol = ({ t }) => {
   const dispatch = useDispatch();
-  const { channels, currentChannelId } = useSelector((state) => state.channels);
+  const { channels, currentChannelId } = useSelector(selectChannel);
   return (
     <Col md={2} className="col-4 border-end pt-5 px-0 bg-light">
       <div className="d-flex justify-content-between mb-2 ps-4 pe-2">
@@ -179,9 +181,10 @@ const ChatPage = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
-  const { channels, currentChannelId } = useSelector((state) => state.channels);
+  const { channels, currentChannelId } = useSelector(selectChannel);
   const currentChannel = _.find(channels, (({ id }) => id === currentChannelId));
-  const messages = useSelector((state) => state.messages.messages);
+  const selectMessage = (state) => state.messages.messages;
+  const messages = useSelector(selectMessage);
   const currentChannelMessages = messages.filter((msg) => msg.channelId === currentChannelId);
 
   useEffect(() => {
@@ -200,7 +203,8 @@ const ChatPage = () => {
     fetchContent();
   }, [auth, dispatch, t]);
 
-  const modalType = useSelector((state) => state.modal.modalType);
+  const selectModal = (state) => state.modal.modalType;
+  const modalType = useSelector(selectModal);
   const renderModal = (type) => {
     if (!type) {
       return null;
