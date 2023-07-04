@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ArrowRightSquareFill, PlusSquareFill } from 'react-bootstrap-icons';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   Button, Col, Container, Row, Dropdown, ButtonGroup,
 } from 'react-bootstrap';
@@ -133,6 +134,7 @@ const SendingForm = ({ t, currentChannel, username }) => {
       setMessage('');
     } catch (err) {
       console.error(err);
+      toast.error('Ошибка отправки сообщения. Пожалуйста, попробуйте еще раз.');
     } finally {
       setSubmitting(false);
     }
@@ -140,6 +142,7 @@ const SendingForm = ({ t, currentChannel, username }) => {
 
   return (
     <div className="mt-auto px-5 py-3">
+      <ToastContainer />
       <form noValidate="" className="py-1 border rounded-2" onSubmit={submitHandler}>
         <fieldset disabled={isSubmitting}>
           <div className="input-group has-validation">
