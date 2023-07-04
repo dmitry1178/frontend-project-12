@@ -17,8 +17,6 @@ import { actions as messagesActions } from '../slices/MessageSlices.js';
 import getModal from './modals/index.jsx';
 import { showModal } from '../slices/modalSlices.js';
 
-profanityFilter.loadDictionary('ru');
-
 const LeftCol = ({ t }) => {
   const dispatch = useDispatch();
   const { channels, currentChannelId } = useSelector((state) => state.channels);
@@ -99,6 +97,8 @@ const SendingForm = ({ t, currentChannel, username }) => {
     e.preventDefault();
     const trimmedMessage = message.trim();
     if (!trimmedMessage.length) return;
+    profanityFilter.loadDictionary('ru');
+    profanityFilter.loadDictionary('en');
     const cleanedMessage = profanityFilter.clean(trimmedMessage);
     setSubmitting(true);
     try {
