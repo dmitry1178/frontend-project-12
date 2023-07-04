@@ -106,7 +106,7 @@ const LoginPage = () => {
                       onChange={formik.handleChange}
                       value={formik.values.password}
                     />
-                    <Form.Label className="form-label">Пароль</Form.Label>
+                    <Form.Label className="form-label">{t('login.password')}</Form.Label>
                     <Form.Control.Feedback type="invalid" tooltip>
                       {t('login.invalidUP')}
                     </Form.Control.Feedback>
