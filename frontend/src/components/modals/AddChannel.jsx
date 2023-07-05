@@ -29,7 +29,7 @@ const Add = () => {
   const inputRef = useRef();
   useEffect(() => {
     inputRef.current.focus();
-  });
+  }, []);
 
   const channelNames = channels.map(({ name }) => name);
   const formik = useFormik({
