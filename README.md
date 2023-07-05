@@ -19,7 +19,7 @@ make start
 ```
 
 ***
-## Link to the project in Railway
-https://frontend-project-12-production-a8c4.up.railway.app
+## Project link
+https://chat-slack-dmitry1178.onrender.com/
 
 
