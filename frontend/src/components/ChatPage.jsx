@@ -117,10 +117,11 @@ const SendingForm = ({ t, currentChannel, username }) => {
     e.preventDefault();
     const trimmedMessage = message.trim();
     if (!trimmedMessage.length) return;
-    const detectedLanguage = franc(trimmedMessage);
+    const detectedLanguage = franc(trimmedMessage, { minLength: 3 });
     if (detectedLanguage === 'rus') {
       profanityFilter.loadDictionary('ru');
-    } else {
+    }
+    if (detectedLanguage === 'eng') {
       profanityFilter.loadDictionary('en');
     }
     const cleanedMessage = profanityFilter.clean(trimmedMessage);
