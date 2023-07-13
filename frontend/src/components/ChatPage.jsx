@@ -21,7 +21,7 @@ import { showModal } from '../slices/modalSlices.js';
 
 const selectChannel = (state) => state.channels;
 
-const LeftCol = ({ t }) => {
+const ChannelList = ({ t }) => {
   const dispatch = useDispatch();
   const { channels, currentChannelId } = useSelector(selectChannel);
   const openModalNewChannel = () => {
@@ -166,7 +166,7 @@ const SendingForm = ({ t, currentChannel, username }) => {
   );
 };
 
-const RightCol = ({
+const CurrentChat = ({
   currentChannel, currentChannelMessages, username, t,
 }) => (
   <Col className="p-0 h-100">
@@ -235,10 +235,10 @@ const ChatPage = () => {
   return (
     <Container className="h-100 my-4 overflow-hidden rounded shadow">
       <Row className="h-100 bg-white flex-md-row">
-        <LeftCol
+        <ChannelList
           t={t}
         />
-        <RightCol
+        <CurrentChat
           currentChannel={currentChannel}
           currentChannelMessages={currentChannelMessages}
           username={auth.userData.username}

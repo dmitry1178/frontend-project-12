@@ -1,11 +1,16 @@
-const apiPath = '/api/v1';
+function generatePaths(apiPath) {
+  return {
+    login: `${apiPath}/login`,
+    signup: `${apiPath}/signup`,
+    data: `${apiPath}/data`,
+    httpDataPath: `${apiPath}/data`,
+    homePage: '/',
+    loginPage: '/login',
+    signupPage: '/signup',
+  };
+}
 
-export default {
-  login: [apiPath, 'login'].join('/'),
-  signup: [apiPath, 'signup'].join('/'),
-  data: [apiPath, 'data'].join('/'),
-  httpDataPath: [apiPath, 'data'].join('/'),
-  homePage: '/',
-  loginPage: '/login',
-  signupPage: '/signup',
-};
+const apiPath = '/api/v1';
+const paths = generatePaths(apiPath);
+
+export default paths;

@@ -5,6 +5,8 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import Stack from 'react-bootstrap/Stack';
 import * as Yup from 'yup';
+import profanityFilter from 'leo-profanity';
+import { franc } from 'franc-min';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import { useSelector, useDispatch } from 'react-redux';
@@ -37,10 +39,20 @@ const Add = () => {
     validationSchema: getValidationSchema(channelNames),
     onSubmit: async (values) => {
       try {
-        const responce = await chatApi.newChannel({ name: values.channelName });
+        const trimmedNameChannel = values.channelName.trim();
+        if (!trimmedNameChannel.length) return;
+        const detectedLanguage = franc(trimmedNameChannel, { minLength: 3 });
+        if (detectedLanguage === 'rus') {
+          profanityFilter.loadDictionary('ru');
+        }
+        if (detectedLanguage === 'eng') {
+          profanityFilter.loadDictionary('en');
+        }
+        const cleanedNameChannel = profanityFilter.clean(trimmedNameChannel);
+
+        const responce = await chatApi.newChannel({ name: cleanedNameChannel });
         toast.success(t('channels.created'));
         dispatch(channelsActions.setCurrentChannelId(responce.data.id));
-        console.log(channels);
         dispatch(hideModal());
       } catch (err) {
         toast.error(t('connectionError'));

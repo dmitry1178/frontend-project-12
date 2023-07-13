@@ -6,6 +6,8 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import Stack from 'react-bootstrap/Stack';
 import * as Yup from 'yup';
+import profanityFilter from 'leo-profanity';
+import { franc } from 'franc-min';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import { hideModal } from '../../slices/modalSlices.js';
@@ -42,7 +44,18 @@ const Rename = () => {
     }),
     onSubmit: async (values) => {
       try {
-        await chatApi.renameChannel({ id: channelId, name: values.name });
+        const trimmedNameChannel = values.name.trim();
+        if (!trimmedNameChannel.length) return;
+        const detectedLanguage = franc(trimmedNameChannel, { minLength: 3 });
+        if (detectedLanguage === 'rus') {
+          profanityFilter.loadDictionary('ru');
+        }
+        if (detectedLanguage === 'eng') {
+          profanityFilter.loadDictionary('en');
+        }
+        const cleanedNameChannel = profanityFilter.clean(trimmedNameChannel);
+
+        await chatApi.renameChannel({ id: channelId, name: cleanedNameChannel });
         toast.success(t('channels.renamed'));
         dispatch(hideModal());
       } catch (err) {
