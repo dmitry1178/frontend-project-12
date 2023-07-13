@@ -90,7 +90,7 @@ const ChannelList = ({ t }) => {
 const MessagesBox = ({ currentChannelMessages }) => {
   useEffect(() => {
     animateScroll.scrollToBottom({ containerId: 'messages-box', delay: 0, duration: 0 });
-  }, []);
+  }, [currentChannelMessages]);
   return (
     <div id="messages-box" className="overflow-auto px-5 ">
       {currentChannelMessages.map(({ id, body, username }) => (
